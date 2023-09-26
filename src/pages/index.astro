@@ -2,6 +2,7 @@
 // Component Imports
 import Head from '../components/Head.astro';
 import { ViewTransitions } from 'astro:transitions';
+import { Carousel } from 'flowbite';
 
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -21,7 +22,12 @@ let permalink = 'https://chipchop.nl/';
       <Nav />
     </div>
 
-    <div id="animation-carousel" class="relative w-full" data-carousel="slide">
+    <div
+      id="animation-carousel"
+      class="relative w-full"
+      data-carousel="slide"
+      data-carousel-interval="9000"
+    >
       <!-- Carousel wrapper -->
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         <!-- Item 1 -->
