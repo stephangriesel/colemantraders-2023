@@ -22,7 +22,7 @@ let permalink = 'https://www.colemantraders.co.za';
       <main>
         <section class="bg-white dark:bg-gray-900">
           <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -43,7 +43,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -64,7 +64,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -85,7 +85,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -106,7 +106,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -127,7 +127,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -148,7 +148,7 @@ let permalink = 'https://www.colemantraders.co.za';
                 />
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animate-fade-in">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 animation">
               <div class="mb-3 text-gray-500 dark:text-gray-400">
                 <h2>Our Mission</h2>
                 <p>
@@ -183,7 +183,7 @@ let permalink = 'https://www.colemantraders.co.za';
     <section class="bg-white dark:bg-gray-900">
       <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
         <p
-          class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400 animate-fade-in"
+          class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400 animation"
         >
           Chipchop is not for the cheap. Chipchop is for those who want to have
           some fun while designing their interior. For those who want
@@ -192,7 +192,7 @@ let permalink = 'https://www.colemantraders.co.za';
           what they want.
         </p>
         <p
-          class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400 animate-fade-in"
+          class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400 animation"
         >
           We can provide you with design insights, inspiring ideas and project
           visualisations, all based on your own space and personal taste. We
@@ -214,7 +214,7 @@ let permalink = 'https://www.colemantraders.co.za';
         <section class="bg-white dark:bg-gray-900">
           <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
             <p
-              class="text-xl font-normal text-gray-500 lg:text-2xl sm:px-16 lg:px-48 dark:text-gray-400 animate-fade-in"
+              class="text-xl font-normal text-gray-500 lg:text-2xl sm:px-16 lg:px-48 dark:text-gray-400 animation"
             >
               The only thing you have to make, is an appointment.
             </p>
@@ -248,12 +248,38 @@ let permalink = 'https://www.colemantraders.co.za';
     </div>
     <Footer />
     <style>
-      p,
-      div,
-      h3 {
-        animation-timeline: view();
-        animation-range: entry 30% cover 30%;
+      .animation {
+        opacity: 0;
+        transition: all 0.7s ease-out;
+        transition-delay: 0.4s;
+      }
+
+      .scroll-animation {
+        opacity: 1;
+        transform: translateX(0);
       }
     </style>
+    <script>
+      const the_animation = document.querySelectorAll('.animation');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('scroll-animation');
+            } else {
+              entry.target.classList.remove('scroll-animation');
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      //
+      for (let i = 0; i < the_animation.length; i++) {
+        const elements = the_animation[i];
+
+        observer.observe(elements);
+      }
+    </script>
   </body>
 </html>

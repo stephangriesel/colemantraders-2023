@@ -196,12 +196,39 @@ let permalink = 'https://www.colemantraders.co.za';
     </div>
     <Footer />
     <style>
-      p,
-      div,
-      h3 {
-        animation-timeline: view();
-        animation-range: entry 30% cover 20%;
+      .animation {
+        opacity: 0;
+        /* transform: translateX(-300px); */
+        transition: all 0.7s ease-out;
+        transition-delay: 0.4s;
+      }
+
+      .scroll-animation {
+        opacity: 1;
+        transform: translateX(0);
       }
     </style>
+    <script>
+      const the_animation = document.querySelectorAll('.animation');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('scroll-animation');
+            } else {
+              entry.target.classList.remove('scroll-animation');
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      //
+      for (let i = 0; i < the_animation.length; i++) {
+        const elements = the_animation[i];
+
+        observer.observe(elements);
+      }
+    </script>
   </body>
 </html>
