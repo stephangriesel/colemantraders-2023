@@ -8,6 +8,14 @@ module.exports = {
 			fontFamily: {
 				'pathway-gothic-one':['"Pathway Gothic One"'],
 			},
+			height: {
+				'128': '32rem',
+				'144': '36rem',
+				'164': '41rem',
+				'168': '42rem',
+				'172': '43rem',
+				'200': '50rem',
+			},
       width: {
         '128': '32rem',
       },
