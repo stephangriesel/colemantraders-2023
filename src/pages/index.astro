@@ -36,7 +36,9 @@ let permalink = 'https://www.colemantraders.co.za';
     >
       <!-- Carousel wrapper -->
       <div class="h-full">
-        <div class="relative overflow-hidden h-[70rem] z-0">
+        <div
+          class="relative overflow-hidden object-fill h-80 md:h-128 lg:h-144 z-0"
+        >
           <!-- Item 1 -->
           <div class="hidden duration-200 ease-linear" data-carousel-item>
             <img
@@ -158,44 +160,47 @@ let permalink = 'https://www.colemantraders.co.za';
         </span>
       </button>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-      <div class="md:h-40 m-10">
-        <span><Container /></span>
-        <h3>CONTAINER SERVICES</h3>
-        <p>
-          We sell a wide variety of used containers. Due to our large
-          transportation network, it enables us to deliver to all provinces at
-          very attractive rates. We are able to load and offload on construction
-          and mining sites thanks to our safety procedures and awareness.
-        </p>
-      </div>
-      <div class="md:h-40 m-10">
-        <span><Truck /></span>
-        <h3>PLANT HIRE SERVICES</h3>
-        <p>
-          We work 24/7 365 days. With committed customer service and dedication
-          to 100% reliability, we can assure our clients that we can make
-          contracts and tenders look effortless. Maintenance teams are on
-          standby to ensure maximum production.
-        </p>
-      </div>
-      <div class="md:h-40 m-10">
-        <span><Fuel /></span>
-        <h3>FUEL WHOLESALE SERVICES</h3>
-        <p>
-          Focusing on 40 000l best quality product deliveries at a time, we are
-          enabled and driven to provide 100% reliable personal service due to
-          our professionally trained team working 24/7.
-        </p>
-      </div>
-      <div class="md:h-40 m-10">
-        <span><Briefcase /></span>
-        <h3>OTHER SERVICES</h3>
-        <p>
-          Our products and services are not limited. We also sell brand new and
-          rebuilt tanks according to your requirements delivered to your site.
-          This will include all accessories and equipment as per demand.
-        </p>
+    <div class="pt-10 pb-10 md:pb-28 max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mb-10">
+        <div class="md:h-48 m-10">
+          <span><Container /></span>
+          <h3 class="font-bold text-xl pt-2">CONTAINER SERVICES</h3>
+          <p class="text-lg">
+            We sell a wide variety of used containers. Due to our large
+            transportation network, it enables us to deliver to all provinces at
+            very attractive rates. We are able to load and offload on
+            construction and mining sites thanks to our safety procedures and
+            awareness.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Truck /></span>
+          <h3 class="font-bold text-xl pt-2">PLANT HIRE SERVICES</h3>
+          <p class="text-lg">
+            We work 24/7 365 days. With committed customer service and
+            dedication to 100% reliability, we can assure our clients that we
+            can make contracts and tenders look effortless. Maintenance teams
+            are on standby to ensure maximum production.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Fuel /></span>
+          <h3 class="font-bold text-xl pt-2">FUEL WHOLESALE SERVICES</h3>
+          <p class="text-lg">
+            Focusing on 40 000l best quality product deliveries at a time, we
+            are enabled and driven to provide 100% reliable personal service due
+            to our professionally trained team working 24/7.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Briefcase /></span>
+          <h3 class="font-bold text-xl pt-2">OTHER SERVICES</h3>
+          <p class="text-lg">
+            Our products and services are not limited. We also sell brand new
+            and rebuilt tanks according to your requirements delivered to your
+            site. This will include all accessories and equipment as per demand.
+          </p>
+        </div>
       </div>
     </div>
     <Footer />
