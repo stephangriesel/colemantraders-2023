@@ -1,14 +1,14 @@
 ---
-import Head from '../components/Head.astro';
-import { ViewTransitions } from 'astro:transitions';
+import Head from "../components/Head.astro";
+import { ViewTransitions } from "astro:transitions";
 
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-import { SITE } from '../config';
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { SITE } from "../config";
 
 let { title } = SITE;
-let description = 'Fuel, container and plant services';
-let permalink = 'https://www.colemantraders.co.za';
+let description = "Fuel, container and plant services";
+let permalink = "https://www.colemantraders.co.za";
 ---
 
 <html lang="en">
@@ -115,5 +115,20 @@ let permalink = 'https://www.colemantraders.co.za';
       </div>
     </div>
     <Footer />
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=6LfhEg0pAAAAAHPTV8pKb1iMKww2zPnkiteDr1Rb"
+    ></script>
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function () {
+          grecaptcha
+            .execute("6LfhEg0pAAAAAHPTV8pKb1iMKww2zPnkiteDr1Rb", {
+              action: "submit",
+            })
+            .then(function (token) {});
+        });
+      }
+    </script>
   </body>
 </html>
