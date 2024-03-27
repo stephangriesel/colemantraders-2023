@@ -1,0 +1,217 @@
+---
+// Component Imports
+import Head from '../components/Head.astro';
+import { ViewTransitions } from 'astro:transitions';
+import { Carousel } from 'flowbite';
+
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+
+import Briefcase from '../components/icons/Briefcase.astro';
+import Container from '../components/icons/Container.astro';
+import Fuel from '../components/icons/Fuel.astro';
+import Truck from '../components/icons/Truck.astro';
+
+let { title } = SITE;
+let description = 'Fuel, container and plant services';
+let permalink = 'https://www.colemantraders.co.za';
+---
+
+<html lang="en">
+  <head>
+    <Head {title} {description} {permalink} />
+    <ViewTransitions fallback="animate" />
+  </head>
+  <body>
+    <div class="ml-[auto] mr-[auto] w-full">
+      <Nav />
+    </div>
+
+    <div
+      id="animation-carousel"
+      class="relative w-full"
+      data-carousel="slide"
+      data-carousel-interval="9000"
+    >
+      <!-- Carousel wrapper -->
+      <div class="h-full">
+        <div
+          class="relative overflow-hidden object-fill h-64 md:h-172 lg:h-200 z-0"
+        >
+          <!-- Item 1 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826140/slider/1_pifm4o.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826141/slider/2_jvguqo.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 3 -->
+          <div
+            class="hidden duration-200 ease-linear"
+            data-carousel-item="active"
+          >
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826382/slider/3_rjyrsq.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826134/slider/4_urrfon.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 5 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826138/slider/5_h1ez4k.jpg"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 6 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826323/slider/6_v1ney4.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 7 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826325/slider/7_vhhvd1.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+          <!-- Item 8 -->
+          <div class="hidden duration-200 ease-linear" data-carousel-item>
+            <img
+              src="https://res.cloudinary.com/dvs29qmqx/image/upload/w_1200,c_scale/v1696826325/slider/8_kyani4.png"
+              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="..."
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+    <div class="pt-10 pb-10 md:pb-28 max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mb-10">
+        <div class="md:h-48 m-10">
+          <span><Container /></span>
+          <h3 class="font-bold text-xl pt-2">CONTAINER SERVICES</h3>
+          <p class="text-lg">
+            We sell a wide variety of used containers. Due to our large
+            transportation network, it enables us to deliver to all provinces at
+            very attractive rates. We are able to load and offload on
+            construction and mining sites thanks to our safety procedures and
+            awareness.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Truck /></span>
+          <h3 class="font-bold text-xl pt-2">PLANT HIRE SERVICES</h3>
+          <p class="text-lg">
+            We work 24/7 365 days. With committed customer service and
+            dedication to 100% reliability, we can assure our clients that we
+            can make contracts and tenders look effortless. Maintenance teams
+            are on standby to ensure maximum production.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Fuel /></span>
+          <h3 class="font-bold text-xl pt-2">FUEL WHOLESALE SERVICES</h3>
+          <p class="text-lg">
+            Focusing on 40 000l best quality product deliveries at a time, we
+            are enabled and driven to provide 100% reliable personal service due
+            to our professionally trained team working 24/7.
+          </p>
+        </div>
+        <div class="md:h-40 m-10">
+          <span><Briefcase /></span>
+          <h3 class="font-bold text-xl pt-2">OTHER SERVICES</h3>
+          <p class="text-lg">
+            Our products and services are not limited. We also sell brand new
+            and rebuilt tanks according to your requirements delivered to your
+            site. This will include all accessories and equipment as per demand.
+          </p>
+        </div>
+      </div>
+    </div>
+    <Footer />
+    <style>
+      p,
+      div,
+      h3,
+      h1 {
+        animation-timeline: view();
+        animation-range: entry 10% cover 10%;
+      }
+    </style>
+  </body>
+</html>
